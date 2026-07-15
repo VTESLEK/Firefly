@@ -6,7 +6,7 @@ description: 我的博客框架使用历程
 tags: [Markdown, 博客, 主题,]
 category: 博客指南
 draft: false
-image: 
+image: ""
 ---
 
 # Wordpress  
