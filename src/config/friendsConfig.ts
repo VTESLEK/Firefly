@@ -55,7 +55,7 @@ export const friendsConfig: FriendLink[] = [
 		imgurl: "https://q2.qlogo.cn/headimg_dl?dst_uin=9892214&spec=0",
 		desc: "分享、实践、学习",
 		siteurl: "https://blog.olinl.com",
-		tags: ["Docs"],
+		tags: ["Astro"],
 		weight: 9,
 		enabled: true,
 	},
