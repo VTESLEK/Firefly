@@ -23,7 +23,7 @@ export const friendsPageConfig: FriendsPageConfig = {
 // 友链配置
 export const friendsConfig: FriendLink[] = [
 	{
-		title: "夏夜流萤",
+		title: "xane",
 		imgurl:
 			"https://cloudflare-imgbed-d88.pages.dev/file/1784102742642_头像.jpg",
 		desc: "Keep going.",
