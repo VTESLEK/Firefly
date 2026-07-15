@@ -47,7 +47,7 @@ export const friendsConfig: FriendLink[] = [
 		desc: "The web framework for content-driven websites. ⭐️ Star to support our work!",
 		siteurl: "https://github.com/withastro/astro",
 		tags: ["Framework"],
-		weight: 8,
+		weight: 10,
 		enabled: true,
 	},
 	{
@@ -57,7 +57,7 @@ export const friendsConfig: FriendLink[] = [
 		siteurl: "https://blog.olinl.com",
 		tags: ["Docs"],
 		weight: 9,
-		enabled: false,
+		enabled: true,
 	},
 ];
 
