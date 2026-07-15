@@ -68,7 +68,6 @@ export const friendsConfig: FriendLink[] = [
 	weight: 9,
 	enabled: true,
 	},
-},
 ];
 
 // 获取启用的友链并进行排序
