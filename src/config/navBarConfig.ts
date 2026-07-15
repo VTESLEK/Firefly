@@ -71,7 +71,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	});
 
 	// 自定义导航栏链接
-	links.push({
+	/*links.push({
 		name: "链接",
 		url: "#",
 		icon: "material-symbols:link",
@@ -102,7 +102,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 				icon: "material-symbols:docs",
 			},
 		],
-	});
+	});*/
 
 	// 文档链接
 	// links.push({
