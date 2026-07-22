@@ -1,6 +1,0 @@
-[2026-07-13T10:06:18.538Z] [INIT] Deep Copilot debug log started. file=f:\blog\Firefly\.deep-copilot\logs\session-2026-07-13T10-06-18-537Z.log
-[2026-07-13T10:06:18.538Z] [ACTIVATE] {"version":"0.43.1"}
-[2026-07-13T10:06:18.539Z] [PROVIDERS_LOADED] {"count":4,"ids":["anthropic","custom","deepseek","openai"]}
-[2026-07-13T10:06:18.539Z] [TERMINAL_MONITOR_STARTED] {}
-[2026-07-13T10:06:18.539Z] [STATUSBAR_REGISTERED] {"id":"deepseekAgent.statusBar"}
-[2026-07-13T10:06:18.542Z] [INLINE_COMPLETION_REGISTERED]

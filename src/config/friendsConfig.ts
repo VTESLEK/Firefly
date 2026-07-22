@@ -52,7 +52,7 @@ export const friendsConfig: FriendLink[] = [
 	},
 	{
 		title: "Olinl Blog",
-		imgurl: "https://q2.qlogo.cn/headimg_dl?dst_uin=9892214&spec=0",
+		imgurl: "https://blog.olinl.com/assets/images/avatar.webp",
 		desc: "分享、实践、学习",
 		siteurl: "https://blog.olinl.com",
 		tags: ["Astro"],
@@ -66,6 +66,15 @@ export const friendsConfig: FriendLink[] = [
         siteurl: "https://fqzlr.com/",
         tags: ["Blog"],
 	    weight: 98,
+	    enabled: true,
+	},
+	{
+        title: "年华",
+        imgurl: "https://q1.qlogo.cn/g?b=qq&nk=1323860289&s=640",
+        desc: "分享生活和技术。",
+        siteurl: "https://blog.amamo.top",
+        tags: ["Astro"],
+	    weight: 97,
 	    enabled: true,
 	},
 ];
