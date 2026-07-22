@@ -45,16 +45,20 @@ Pages CMS 的核心逻辑可以总结为：
              │
 
              ▼ (执行 astro build)
-```  
+```
+
 ## 二、 使用教程
 
 ### Step 1. 准备配置文件
+
 访问你的 **GitHub 博客仓库**，在仓库根目录下创建一个新文件，命名为 `.pages.yml`。
 
 ### Step 2. 连接并配置后台
+
 1. 访问 [Pages CMS 官网](https://pagescms.org/)，使用 **GitHub 账号登录**。
 2. 登录后选择你的博客仓库。
-3. 首次使用需要配置：点击左侧导航栏的 **Configuration** 选项卡，输入以下 YAML 配置代码并保存  
+3. 首次使用需要配置：点击左侧导航栏的 **Configuration** 选项卡，输入以下 YAML 配置代码并保存
+
 ```yaml
 content:
   - name: posts
@@ -112,6 +116,7 @@ content:
         label: 文章正文
         type: rich-text
 ```
+
 保存完成后，你就可以像使用动态博客一样，优雅地在网页端撰写和编辑博客了！
 
 其实你现在看到的这篇博文，就是直接用 PagesCMS 编写并发布的
