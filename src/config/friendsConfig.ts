@@ -77,6 +77,15 @@ export const friendsConfig: FriendLink[] = [
 	    weight: 97,
 	    enabled: true,
 	},
+	{
+        title: "THW's Blog",
+        imgurl: "https://image.tianhw.top/avatar.webp",
+        desc: "前途似海，来日方长",
+        siteurl: "https://blog.tianhw.top",
+        tags: ["Astro"],
+	    weight: 96,
+	    enabled: true,
+	},
 ];
 
 // 获取启用的友链并进行排序
