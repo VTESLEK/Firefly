@@ -1,6 +1,6 @@
 ---
 
-import { getEntry, render } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import Markdown from "@components/common/Markdown.astro";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
@@ -13,12 +13,26 @@ if (!aboutPost) {
 }
 
 const { Content } = await render(aboutPost);
+
+// 构建时统计站点数据
+const posts = await getCollection("posts");
+const shuoshuo = await getCollection("shuoshuo");
+const tags = new Set<string>();
+posts.forEach((post) => post.data.tags?.forEach((t: string) => tags.add(t)));
+
+// 以最早的文章日期作为建站起点，计算运行天数
+const earliest = posts
+	.map((p) => p.data.date?.getTime() ?? Date.now())
+	.reduce((a, b) => Math.min(a, b), Date.now());
+const days = Math.max(1, Math.floor((Date.now() - earliest) / 86400000));
+
+const stats = { posts: posts.length, shuoshuo: shuoshuo.length, tags: tags.size, days };
 ---
 <MainGridLayout title={i18n(I18nKey.about)} description={i18n(I18nKey.about)}>
     <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full ">
             <Markdown class="mt-2">
-                <Content />
+                <Content stats={stats} />
             </Markdown>
         </div>
     </div>
