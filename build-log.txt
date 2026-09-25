@@ -1,0 +1,296 @@
+﻿
+> firefly@6.13.8 build F:\blog\Firefly
+> node scripts/generate-icons.js && npx tsx scripts/generate-lqips.ts && astro build && npx tsx scripts/subset-fonts.ts && pagefind --site dist
+
+🔍 扫描源文件中的图标使用...
+
+📁 找到 20 个源文件
+
+🎨 发现 21 个不同的图标:
+
+   fa7-solid: 3 个图标
+   material-symbols: 16 个图标
+   mdi: 1 个图标
+   svg-spinners: 1 个图标
+
+✅ 成功加载 21 个图标
+
+📝 已生成: F:\blog\Firefly\src\constants\icons.ts
+📦 文件大小: 12.00 KB
+
+node.exe : npm warn Unknown project config "manage-package-manager-versions". This will stop working in the next major 
+version of npm. See `npm help npmrc` for supported config options.
+At C:\Users\Administrator\AppData\Roaming\npm\pnpm.ps1:24 char:5
++     & "node$exe"  "$basedir/node_modules/pnpm/bin/pnpm.mjs" $args
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm warn Unknow...config options.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Loaded 26 existing entries from src/constants/lqips.json
+Found 26 images, 0 new to process.
+
+Done! Processed 0/0 new images. Total: 26. Output: src/constants/lqips.json
+[2m17:33:05[22m [34m[content][39m Syncing content
+[2m17:33:05[22m [34m[content][39m Synced content
+[2m17:33:05[22m [34m[types][39m Generated [2m2.16s[22m
+[2m17:33:05[22m [34m[build][39m output: [34m"static"[39m
+[2m17:33:05[22m [34m[build][39m mode: [34m"static"[39m
+[2m17:33:05[22m [34m[build][39m directory: [34mF:\blog\Firefly\dist\[39m
+[2m17:33:05[22m [34m[build][39m Collecting build info...
+[2m17:33:05[22m [34m[build][39m [32m✓ Completed in 3.50s.[39m
+[2m17:33:05[22m [34m[build][39m Building static entrypoints...
+[2m17:33:21[22m [34m[assets][39m Copying fonts (22 files)...
+[2m17:33:27[22m [34m[vite][39m [32m✓ built in 20.91s[39m
+[33m[1m17:33:33[22m [WARN] [vite][39m [33m[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[2m17:33:33[22m [34m[vite][39m [32m✓ built in 5.22s[39m
+[2m17:33:33[22m [34m[build][39m Rearranging server assets...
+
+[42m[30m generating static routes [39m[49m
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:40[22m   [34m├─[39m [2m/404.html[22m [2m(+490ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:40[22m   [34m├─[39m [2m/about/index.html[22m [2m(+85ms)[22m 
+[2m17:33:40[22m   [34m├─[39m [2m/anime/index.html[22m [2m(+35ms)[22m 
+[2m17:33:40[22m   [34m├─[39m [2m/api/allPostMeta.json[22m [2m(+7ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:40[22m   [34m├─[39m [2m/archive/index.html[22m [2m(+78ms)[22m 
+[2m17:33:41[22m   [34m├─[39m [2m/bangumi/index.html[22m [2m(+31ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:41[22m   [34m├─[39m [2m/categories/index.html[22m [2m(+69ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:41[22m   [34m├─[39m [2m/friends/index.html[22m [2m(+100ms)[22m 
+[2m17:33:41[22m   [34m├─[39m [2m/gallery/firefly-2026/index.html[22m [2m(+3ms)[22m 
+[2m17:33:41[22m   [34m├─[39m [2m/gallery/encrypted-test/index.html[22m [2m(+16ms)[22m 
+[2m17:33:41[22m   [34m├─[39m [2m/gallery/index.html[22m [2m(+16ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:41[22m   [34m├─[39m [2m/guestbook/index.html[22m [2m(+95ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:41[22m   [34m├─[39m [2m/posts/guide/index.html[22m [31m(+667ms)[39m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:42[22m   [34m├─[39m [2m/posts/pagescms/index.html[22m [2m(+63ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:42[22m   [34m├─[39m [2m/posts/first/index.html[22m [2m(+106ms)[22m 
+[2m17:33:42[22m   [34m├─[39m [2m/robots.txt[22m [2m(+14ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:42[22m   [34m├─[39m [2m/rss/index.html[22m [2m(+36ms)[22m 
+[2m17:33:42[22m   [34m├─[39m [2m/rss.xml[22m [31m(+1.18s)[39m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:43[22m   [34m├─[39m [2m/search/index.html[22m [2m(+40ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:43[22m   [34m├─[39m [2m/shuoshuo/index.html[22m [2m(+53ms)[22m 
+[2m17:33:43[22m   [34m├─[39m [2m/sponsor/index.html[22m [2m(+12ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:43[22m   [34m├─[39m [2m/tags/index.html[22m [2m(+79ms)[22m 
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m2.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m3.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m4.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m5.avif
+
+[ERROR] Image file not found: src/assets/images/MobileWallpaper/m6.avif
+[2m17:33:43[22m   [34m├─[39m [2m/index.html[22m [2m(+39ms)[22m 
+[2m17:33:43[22m [32m✓ Completed in 10.10s.
+[39m
+[42m[30m generating optimized images [39m[49m
+[2m17:33:45[22m   [32m▶[39m /_astro/firefly.EzH7fIYR_2kkPj.webp [2m(before: 26kB, after: 0kB)[22m [2m(+1.61s)[22m [2m(1/29)[22m
+[2m17:33:45[22m   [32m▶[39m /_astro/firefly.EzH7fIYR_Z1fPAp8.webp [2m(before: 26kB, after: 2kB)[22m [2m(+38ms)[22m [2m(2/29)[22m
+[2m17:33:45[22m   [32m▶[39m /_astro/cover.LVH5wcXY_ZMPN4G.webp [2m(before: 79kB, after: 36kB)[22m [2m(+1.64s)[22m [2m(3/29)[22m
+[2m17:33:45[22m   [32m▶[39m /_astro/cover.bDPQizdp_Z2sUtCt.webp [2m(before: 75kB, after: 74kB)[22m [2m(+1.64s)[22m [2m(4/29)[22m
+[2m17:33:45[22m   [32m▶[39m /_astro/firefly.EzH7fIYR_16B3gR.webp [2m(before: 26kB, after: 12kB)[22m [2m(+195ms)[22m [2m(5/29)[22m
+[2m17:33:45[22m   [32m▶[39m /_astro/cover.bDPQizdp_1h4OVn.webp [2m(before: 75kB, after: 122kB)[22m [2m(+594ms)[22m [2m(6/29)[22m
+[2m17:33:46[22m   [32m▶[39m /_astro/cover.LVH5wcXY_1ksYAB.webp [2m(before: 79kB, after: 63kB)[22m [2m(+730ms)[22m [2m(7/29)[22m
+[2m17:33:46[22m   [32m▶[39m /_astro/cover.bDPQizdp_Z26w5Lh.webp [2m(before: 75kB, after: 168kB)[22m [2m(+736ms)[22m [2m(8/29)[22m
+[2m17:33:46[22m   [32m▶[39m /_astro/cover.LVH5wcXY_ZUcwNk.webp [2m(before: 79kB, after: 88kB)[22m [2m(+906ms)[22m [2m(9/29)[22m
+[2m17:33:46[22m   [32m▶[39m /_astro/m1.DNfFbpe5_1CW1ce.webp [2m(before: 1283kB, after: 17kB)[22m [2m(+3.30s)[22m [2m(10/29)[22m
+[2m17:33:47[22m   [32m▶[39m /_astro/cover.bDPQizdp_2bDOgt.webp [2m(before: 75kB, after: 169kB)[22m [2m(+671ms)[22m [2m(11/29)[22m
+[2m17:33:47[22m   [32m▶[39m /_astro/cover.bDPQizdp_Z255eMJ.webp [2m(before: 75kB, after: 17kB)[22m [2m(+262ms)[22m [2m(12/29)[22m
+[2m17:33:47[22m   [32m▶[39m /_astro/cover.bDPQizdp_ZEzH1i.webp [2m(before: 75kB, after: 33kB)[22m [2m(+184ms)[22m [2m(13/29)[22m
+[2m17:33:47[22m   [32m▶[39m /_astro/cover.LVH5wcXY_ZDb0e4.webp [2m(before: 79kB, after: 112kB)[22m [2m(+968ms)[22m [2m(14/29)[22m
+[2m17:33:48[22m   [32m▶[39m /_astro/cover.bDPQizdp_1skyun.webp [2m(before: 75kB, after: 48kB)[22m [2m(+255ms)[22m [2m(15/29)[22m
+[2m17:33:48[22m   [32m▶[39m /_astro/cover.LVH5wcXY_ZTAznu.webp [2m(before: 79kB, after: 9kB)[22m [2m(+444ms)[22m [2m(16/29)[22m
+[2m17:33:48[22m   [32m▶[39m /_astro/cover.bDPQizdp_ZqgWDr.webp [2m(before: 75kB, after: 79kB)[22m [2m(+429ms)[22m [2m(17/29)[22m
+[2m17:33:48[22m   [32m▶[39m /_astro/cover.bDPQizdp_1l3my4.webp [2m(before: 75kB, after: 25kB)[22m [2m(+203ms)[22m [2m(18/29)[22m
+[2m17:33:48[22m   [32m▶[39m /_astro/m1.DNfFbpe5_BGYhv.webp [2m(before: 1283kB, after: 22kB)[22m [2m(+1.96s)[22m [2m(19/29)[22m
+[2m17:33:49[22m   [32m▶[39m /_astro/cover.LVH5wcXY_kyrqa.webp [2m(before: 79kB, after: 16kB)[22m [2m(+938ms)[22m [2m(20/29)[22m
+[2m17:33:49[22m   [32m▶[39m /_astro/cover.LVH5wcXY_2i9cY3.webp [2m(before: 79kB, after: 25kB)[22m [2m(+432ms)[22m [2m(21/29)[22m
+[2m17:33:50[22m   [32m▶[39m /_astro/cover.LVH5wcXY_ZuTK8t.webp [2m(before: 79kB, after: 42kB)[22m [2m(+710ms)[22m [2m(22/29)[22m
+[2m17:33:50[22m   [32m▶[39m /_astro/cover.LVH5wcXY_Zo70r7.webp [2m(before: 79kB, after: 12kB)[22m [2m(+488ms)[22m [2m(23/29)[22m
+[2m17:33:50[22m   [32m▶[39m /_astro/m1.DNfFbpe5_QyjH7.webp [2m(before: 1283kB, after: 37kB)[22m [2m(+2.04s)[22m [2m(24/29)[22m
+[2m17:33:52[22m   [32m▶[39m /_astro/m1.DNfFbpe5_2fTj0B.webp [2m(before: 1283kB, after: 62kB)[22m [2m(+1.34s)[22m [2m(25/29)[22m
+[2m17:33:54[22m   [32m▶[39m /_astro/m1.DNfFbpe5_wcbHl.webp [2m(before: 1283kB, after: 106kB)[22m [2m(+1.91s)[22m [2m(26/29)[22m
+[2m17:33:55[22m   [32m▶[39m /_astro/m1.DNfFbpe5_1NkEfR.webp [2m(before: 1283kB, after: 149kB)[22m [2m(+1.70s)[22m [2m(27/29)[22m
+[2m17:33:58[22m   [32m▶[39m /_astro/m1.DNfFbpe5_Z1vU3j3.webp [2m(before: 1283kB, after: 218kB)[22m [2m(+2.52s)[22m [2m(28/29)[22m
+[2m17:34:00[22m   [32m▶[39m /_astro/m1.DNfFbpe5_ZvINGM.webp [2m(before: 1283kB, after: 300kB)[22m [2m(+2.32s)[22m [2m(29/29)[22m
+[2m17:34:00[22m [32m✓ Completed in 17.10s.
+[39m
+[2m17:34:01[22m [34m[build][39m [32m✓ Completed in 55.40s.[39m
+[2m17:34:01[22m [34m[@astrojs/sitemap][39m `sitemap-index.xml` created at `dist`
+[2m17:34:01[22m [34m[build][39m 20 page(s) built in [1m59.04s[22m
+[2m17:34:01[22m [34m[build][39m [1mComplete![22m
+npm warn Unknown project config "manage-package-manager-versions". This will stop working in the next major version of 
+npm. See `npm help npmrc` for supported config options.
+🔤 Font subsetting started...
+   ⏭ Skipping '--font-greatvibes' — not referenced in selected or any font region.
+   No local fonts with subset: true found. Skipping.
+
+Running Pagefind v1.5.2 (Extended)
+Running from: "F:\\blog\\Firefly"
+Source:       "dist"
+Output:       "dist\\pagefind"
+
+[Walking source directory]
+Found 20 files matching **/*.{html}
+
+[Parsing files]
+Found a data-pagefind-body element on the site.
+↳ Ignoring pages without this tag.
+6 pages found without an <html> element. 
+Pages without an outer <html> element will not be processed by default. 
+If adding this element is not possible, use the root selector config to target a different root element.
+  * "/anime/" has no <html> element
+  * "/bangumi/" has no <html> element
+  * "/gallery/encrypted-test/" has no <html> element
+  * "/gallery/firefly-2026/" has no <html> element
+
+[Reading languages]
+  * "/gallery/" has no <html> element
+  * "/sponsor/" has no <html> element
+Discovered 1 language: zh-cn
+
+[Building search indexes]
+Total: 
+  Indexed 1 language
+  Indexed 7 pages
+  Indexed 774 words
+  Indexed 0 filters
+  Indexed 0 sorts
+Note: Pagefind doesn't support stemming for the language zh-cn. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language zh-cn. 
+Search will still work, but will not match across root words.
+
+Finished in 0.933 seconds

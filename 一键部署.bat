@@ -16,6 +16,10 @@ git commit -m "Update blog: %date% %time%"
 echo 正在推送到 GitHub...
 git push origin master
 
+:: 5. 部署到 Cloudflare Pages（xane.eu.cc 实际生效的部署）
+echo 正在部署到 Cloudflare Pages...
+call npx wrangler pages deploy dist --project-name=firefly-blog --branch=master --commit-dirty=true
+
 echo ====================================
 echo  同步完成！3 秒后窗口自动关闭...
 echo ====================================
