@@ -85,6 +85,9 @@ enum I18nKey {
 	friendsEmpty = "friendsEmpty",
 	guestbook = "guestbook",
 	guestbookDescription = "guestbookDescription",
+	shuoshuo = "shuoshuo",
+	shuoshuoDescription = "shuoshuoDescription",
+	shuoshuoEmpty = "shuoshuoEmpty",
 	bangumi = "bangumi",
 
 	// 番组计划筛选和状态文本

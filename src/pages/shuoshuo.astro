@@ -1,0 +1,112 @@
+---
+import { getCollection, render } from "astro:content";
+import Markdown from "@components/common/Markdown.astro";
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/config";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import { formatDateI18n } from "@/utils/date-utils";
+
+// 检查页面是否启用
+if (!siteConfig.pages.shuoshuo) {
+	return Astro.redirect("/404/");
+}
+
+// 按日期倒序获取所有说说
+const entries = (await getCollection("shuoshuo")).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+// 渲染每条说说的 Markdown 内容
+const items = await Promise.all(
+	entries.map(async (entry) => ({
+		entry,
+		Content: (await render(entry)).Content,
+	})),
+);
+
+// 页面标题和描述
+const title = i18n(I18nKey.shuoshuo);
+const description = i18n(I18nKey.shuoshuoDescription);
+---
+
+<MainGridLayout title={title} description={description}>
+  <div
+    class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32"
+  >
+    <div class="card-base z-10 px-9 py-6 relative w-full">
+      <!-- 页面标题和描述 -->
+      <div class="mb-8">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="h-8 w-8 rounded-lg bg-(--primary) flex items-center justify-center text-white dark:text-black/70">
+            <Icon is:inline name="material-symbols:edit-note" class="text-[1.5rem]"></Icon>
+          </div>
+          <div class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            {title}
+          </div>
+        </div>
+        {description && (
+          <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
+            {description}
+          </p>
+        )}
+      </div>
+
+      <!-- 说说时间线 -->
+      {
+        items.length > 0 ? (
+          <div class="shuoshuo-timeline relative">
+            <div class="absolute left-[5px] top-2 bottom-2 w-px bg-(--btn-regular-bg)" />
+            {items.map(({ entry, Content }) => (
+              <div class="relative pl-8 pb-8 last:pb-0">
+                <!-- 时间线圆点 -->
+                <div class="absolute left-0 top-1.5 h-[11px] w-[11px] rounded-full bg-(--primary) ring-4 ring-(--btn-regular-bg)" />
+                <div class="card-base border border-(--btn-regular-bg) rounded-xl px-6 py-5">
+                  <!-- 日期和标签 -->
+                  <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+                    <div class="flex items-center gap-1.5 text-sm text-(--content-meta)">
+                      <Icon is:inline name="material-symbols:calendar-today" class="text-[0.9rem]" />
+                      <time datetime={entry.data.date.toISOString()}>
+                        {formatDateI18n(entry.data.date, true)}
+                      </time>
+                    </div>
+                    {entry.data.tags.length > 0 && (
+                      <div class="flex flex-wrap gap-1.5">
+                        {entry.data.tags.map((tag) => (
+                          <span class="px-2 py-0.5 rounded-md text-xs bg-(--btn-regular-bg) text-neutral-600 dark:text-neutral-300">
+                            # {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <!-- 内容 -->
+                  <Markdown class="mt-0">
+                    <Content />
+                  </Markdown>
+                  <!-- 配图 -->
+                  {entry.data.image && (
+                    <img
+                      src={entry.data.image}
+                      alt={entry.data.tags.join(", ") || title}
+                      loading="lazy"
+                      class="mt-3 rounded-lg w-full max-h-96 object-cover"
+                    />
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-12 text-(--content-meta)">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-(--btn-regular-bg) flex items-center justify-center">
+              <Icon is:inline name="material-symbols:edit-note" class="text-3xl text-(--primary)" />
+            </div>
+            <p class="text-base">{i18n(I18nKey.shuoshuoEmpty)}</p>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</MainGridLayout>

@@ -61,6 +61,9 @@ export const en: Translation = {
 	[Key.guestbook]: "Guestbook",
 	[Key.guestbookDescription]:
 		"Welcome to leave your mark here, share your thoughts and suggestions",
+	[Key.shuoshuo]: "Moments",
+	[Key.shuoshuoDescription]: "Sharing little thoughts and moments of my life",
+	[Key.shuoshuoEmpty]: "No moments posted yet",
 	[Key.untitled]: "Untitled",
 	[Key.uncategorized]: "Uncategorized",
 	[Key.noTags]: "No Tags",

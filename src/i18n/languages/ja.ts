@@ -61,6 +61,9 @@ export const ja: Translation = {
 	[Key.guestbook]: "ゲストブック",
 	[Key.guestbookDescription]:
 		"ここに足跡を残して、あなたの考えや提案を共有してください",
+	[Key.shuoshuo]: "つぶやき",
+	[Key.shuoshuoDescription]: "日々の出来事や気持ちを気軽に記録しましょう",
+	[Key.shuoshuoEmpty]: "まだつぶやきはありません",
 	[Key.untitled]: "無題",
 	[Key.uncategorized]: "未分類",
 	[Key.noTags]: "タグなし",

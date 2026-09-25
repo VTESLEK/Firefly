@@ -1,0 +1,46 @@
+name: Telegram Shuoshuo Bot
+
+# 定时轮询 Telegram Bot，把新消息转成说说并提交，触发站点自动部署。
+# 需要 GitHub Actions Secrets：
+#   TELEGRAM_BOT_TOKEN - Bot Token（@BotFather 创建）
+#   TELEGRAM_CHAT_ID   - 授权聊天的 ID（未配置时运行一次会在日志中打印候选 ID）
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# 串行运行，避免并发轮询导致重复提交
+concurrency:
+  group: telegram-shuoshuo
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # 用 Actions Cache 保存轮询进度（offset），避免重复处理旧消息
+      - name: Restore poll offset
+        uses: actions/cache@v4
+        with:
+          path: .telegram-offset
+          key: telegram-offset-${{ github.run_id }}
+          restore-keys: |
+            telegram-offset-
+
+      - name: Poll Telegram and publish shuoshuo
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TARGET_BRANCH: master
+        run: node scripts/telegram-bot.mjs

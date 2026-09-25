@@ -36,7 +36,17 @@ const specCollection = defineCollection({
 	schema: z.object({}),
 });
 
+const shuoshuoCollection = defineCollection({
+	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/shuoshuo" }),
+	schema: z.object({
+		date: z.date(),
+		tags: z.array(z.string()).optional().default([]),
+		image: z.string().optional().default(""),
+	}),
+});
+
 export const collections = {
 	posts: postsCollection,
 	spec: specCollection,
+	shuoshuo: shuoshuoCollection,
 };

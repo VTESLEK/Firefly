@@ -37,3 +37,6 @@ Firefly-docs/
 cache/
 package/
 .obsidian/
+
+# telegram bot poll offset
+.telegram-offset

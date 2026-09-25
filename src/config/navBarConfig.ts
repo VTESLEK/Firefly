@@ -39,6 +39,9 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	// 留言板
 	links.push(LinkPresets.Guestbook);
 
+	// 说说
+	links.push(LinkPresets.Shuoshuo);
+
 	// 我的及其子菜单
 	links.push({
 		name: "我的",
@@ -162,6 +165,12 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/guestbook/",
 		icon: "material-symbols:chat",
 		pageKey: "guestbook",
+	},
+	Shuoshuo: {
+		name: "说说",
+		url: "/shuoshuo/",
+		icon: "material-symbols:edit-note",
+		pageKey: "shuoshuo",
 	},
 	About: {
 		name: "关于我",
