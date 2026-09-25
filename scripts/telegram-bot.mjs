@@ -47,11 +47,6 @@ export function formatDateTime(date) {
 	return `${get("year")}-${get("month")}-${get("day")} ${hour}:${get("minute")}:${get("second")}`;
 }
 
-/** frontmatter 用：ISO 格式并带 +08:00 时区偏移，避免被解析为 UTC */
-export function toIsoWithOffset(date) {
-	return `${formatDateTime(date).replace(" ", "T")}+08:00`;
-}
-
 /** 文件名时间戳：YYYYMMDDHHmmss */
 export function stampForFile(date) {
 	return formatDateTime(date).replace(/[-: ]/g, "");
@@ -76,7 +71,7 @@ export function stripTags(text) {
 
 /** 生成一条说说的 Markdown 文件内容 */
 export function buildPost({ date, text, tags, imagePath }) {
-	const lines = ["---", `date: ${toIsoWithOffset(date)}`];
+	const lines = ["---", `date: ${formatDateTime(date)}`];
 	if (tags.length > 0) {
 		lines.push("tags:");
 		for (const tag of tags) lines.push(`  - ${tag}`);
