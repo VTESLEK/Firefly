@@ -65,6 +65,9 @@ const tLoadError = i18n(I18nKey.videoLoadError);
 
 <script is:inline define:vars={{ urls: urlsJson, playerMode, hasMultiple }}>
 	(() => {
+		// 移动端（<1024px）禁用背景视频：不初始化、不加载，节省流量并加快首屏
+		if (window.innerWidth < 1024) return;
+
 		var urlList = JSON.parse(urls);
 		if (!urlList.length) return;
 		var isMultiple = urlList.length > 1;
@@ -216,6 +219,13 @@ const tLoadError = i18n(I18nKey.videoLoadError);
 </script>
 
 <style>
+	/* 移动端隐藏整个背景视频播放器 */
+	@media (max-width: 1023px) {
+		#bg-player {
+			display: none !important;
+		}
+	}
+
 	:global([data-bg-video-playing] #banner-images-container),
 	:global([data-bg-video-playing] #banner-dim-container),
 	:global([data-bg-video-playing] #banner-overlay-container),

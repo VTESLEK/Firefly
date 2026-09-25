@@ -569,6 +569,81 @@ const siteLang = lang.replace("_", "-");
 
     <div id="progress-bar"></div>
 
+    <!-- 首屏加载过渡层：在 CSS/JS 资源就绪前遮挡未水合的界面，避免手机弱网下看到散装 HTML -->
+    <div id="initial-loader" aria-hidden="true">
+      <div class="il-ring"></div>
+      <div class="il-name">xane</div>
+    </div>
+    <style is:inline>
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+        justify-content: center;
+        background: #f4f5f7;
+        transition: opacity 0.45s ease;
+      }
+      html.dark #initial-loader {
+        background: #0f1115;
+      }
+      #initial-loader.il-done {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .il-ring {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 3px solid color-mix(in oklab, oklch(0.6 0.13 var(--hue, 240)) 20%, transparent);
+        border-top-color: oklch(0.6 0.13 var(--hue, 240));
+        animation: il-spin 0.8s linear infinite;
+      }
+      .il-name {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.35em;
+        padding-left: 0.35em;
+        color: #9aa1ad;
+      }
+      html.dark .il-name {
+        color: #5b6270;
+      }
+      @keyframes il-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <script is:inline>
+      (function () {
+        var el = document.getElementById("initial-loader");
+        if (!el) return;
+        var hidden = false;
+        var startTime = Date.now();
+        function hide() {
+          if (hidden) return;
+          hidden = true;
+          // 至少展示 300ms，避免一闪而过的闪烁感
+          var delay = Math.max(0, 300 - (Date.now() - startTime));
+          setTimeout(function () {
+            el.classList.add("il-done");
+            setTimeout(function () {
+              el.remove();
+            }, 500);
+          }, delay);
+        }
+        window.addEventListener("load", function () {
+          setTimeout(hide, 150);
+        });
+        // 兜底：资源异常或 JS 失败时最多 6 秒强制消失，绝不永久遮挡
+        setTimeout(hide, 6000);
+      })();
+    </script>
+
     <!-- 页面顶部渐变高光效果 - 只在full和semifull模式下显示 -->
     {shouldShowTopHighlight && <div class="top-gradient-highlight" />}
     <ConfigCarrier />
