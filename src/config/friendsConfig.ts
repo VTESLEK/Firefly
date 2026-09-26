@@ -24,13 +24,12 @@ export const friendsPageConfig: FriendsPageConfig = {
 export const friendsConfig: FriendLink[] = [
 	{
 		title: "xane",
-		imgurl:
-			"https://cloudflare-imgbed-d88.pages.dev/file/1784102742642_头像.jpg",
+		imgurl: "https://cloudflare-imgbed-d88.pages.dev/file/1784102742642_头像.jpg",
 		desc: "Keep going.",
 		siteurl: "https://xane.eu.cc/",
 		tags: ["Blog"],
-		weight: 10, // 权重，数字越大排序越靠前
-		enabled: false, // 是否启用
+		weight: 10,
+		enabled: false,
 	},
 	{
 		title: "Firefly Docs",
@@ -60,32 +59,24 @@ export const friendsConfig: FriendLink[] = [
 		enabled: true,
 	},
 	{
-        title: "番茄主理人",
-        imgurl: "https://q1.qlogo.cn/g?b=qq&nk=20447289&s=640",
-        desc: "坐而言不如起而行.",
-        siteurl: "https://fqzlr.com/",
-        tags: ["Blog"],
-	    weight: 98,
-	    enabled: true,
+		title: "番茄主理人",
+		imgurl: "https://q1.qlogo.cn/g?b=qq&nk=20447289&s=640",
+		desc: "坐而言不如起而行.",
+		siteurl: "https://fqzlr.com/",
+		tags: ["Blog"],
+		weight: 98,
+		enabled: true,
 	},
 	{
-        title: "年华",
-        imgurl: "https://q1.qlogo.cn/g?b=qq&nk=1323860289&s=640",
-        desc: "分享生活和技术。",
-        siteurl: "https://blog.amamo.top",
-        tags: ["Astro"],
-	    weight: 97,
-	    enabled: true,
+		title: "年华",
+		imgurl: "https://q1.qlogo.cn/g?b=qq&nk=1323860289&s=640",
+		desc: "分享生活和技术。",
+		siteurl: "https://blog.amamo.top",
+		tags: ["Astro"],
+		weight: 97,
+		enabled: true,
 	},
-	{
-        title: "THW's Blog",
-        imgurl: "https://image.tianhw.top/avatar.webp",
-        desc: "前途似海，来日方长",
-        siteurl: "https://blog.tianhw.top",
-        tags: ["Astro"],
-	    weight: 96,
-	    enabled: true,
-	},
+
 ];
 
 // 获取启用的友链并进行排序
