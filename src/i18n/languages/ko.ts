@@ -372,6 +372,12 @@ export const ko: Translation = {
 	[Key.codeCollapsibleExpanded]: "코드 블록 펼쳐짐",
 	[Key.codeCollapsibleCollapsed]: "코드 블록 접힘",
 
+	// AI 요약
+	[Key.aiSummary]: "AI 요약",
+	[Key.aiSummaryGenerating]: "요약 생성 중…",
+	[Key.aiSummaryFailed]: "요약 생성 실패, 클릭하여 재시도",
+	[Key.aiSummaryDisclaimer]: "AI 생성 콘텐츠, 참고용",
+
 	// Gallery Page
 	[Key.gallery]: "갤러리",
 	[Key.galleryDescription]: "삶의 아름다운 순간을 담다",

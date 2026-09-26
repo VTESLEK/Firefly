@@ -373,6 +373,12 @@ export const ja: Translation = {
 	[Key.codeCollapsibleExpanded]: "コードブロックが展開されました",
 	[Key.codeCollapsibleCollapsed]: "コードブロックが折りたたまれました",
 
+	// AI 要約
+	[Key.aiSummary]: "AI 要約",
+	[Key.aiSummaryGenerating]: "要約を生成中…",
+	[Key.aiSummaryFailed]: "要約の生成に失敗しました。クリックで再試行",
+	[Key.aiSummaryDisclaimer]: "AI が生成したコンテンツです。参考用",
+
 	// ギャラリーページ
 	[Key.gallery]: "ギャラリー",
 	[Key.galleryDescription]: "人生の美しい瞬間を記録する",

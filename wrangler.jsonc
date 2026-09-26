@@ -1,8 +1,13 @@
 {
-	"name": "firefly",
+	// Cloudflare Pages 配置（配置即代码：手动 wrangler deploy 与 Git 自动构建共用）
+	"name": "firefly-blog",
 	"compatibility_date": "2025-01-01",
 	"compatibility_flags": ["nodejs_compat"],
-	"assets": {
-		"directory": "./dist"
-	}
+	"pages_build_output_dir": "./dist",
+	"kv_namespaces": [
+		{
+			"binding": "AI_SUMMARIES",
+			"id": "8c7110f605424e258a7bd5b9cd83d7e4"
+		}
+	]
 }

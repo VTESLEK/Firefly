@@ -376,6 +376,12 @@ export const ru: Translation = {
 	[Key.codeCollapsibleExpanded]: "Блок кода развернут",
 	[Key.codeCollapsibleCollapsed]: "Блок кода свернут",
 
+	// ИИ-резюме
+	[Key.aiSummary]: "ИИ-резюме",
+	[Key.aiSummaryGenerating]: "Создание резюме…",
+	[Key.aiSummaryFailed]: "Не удалось создать резюме, нажмите для повтора",
+	[Key.aiSummaryDisclaimer]: "Создано ИИ, только для справки",
+
 	// Страница галереи
 	[Key.gallery]: "Галерея",
 	[Key.galleryDescription]: "Запечатлеть прекрасные моменты жизни",

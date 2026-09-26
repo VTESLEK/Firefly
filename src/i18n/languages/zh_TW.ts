@@ -367,6 +367,12 @@ export const zh_TW: Translation = {
 	[Key.codeCollapsibleExpanded]: "代碼區塊已展開",
 	[Key.codeCollapsibleCollapsed]: "代碼區塊已折疊",
 
+	// AI 摘要
+	[Key.aiSummary]: "AI 摘要",
+	[Key.aiSummaryGenerating]: "正在產生摘要…",
+	[Key.aiSummaryFailed]: "摘要產生失敗，點擊重試",
+	[Key.aiSummaryDisclaimer]: "內容由 AI 產生，僅供參考",
+
 	// 相簿頁面
 	[Key.gallery]: "相簿",
 	[Key.galleryDescription]: "記錄生活中的美好瞬間",

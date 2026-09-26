@@ -361,6 +361,12 @@ enum I18nKey {
 	codeCollapsibleExpanded = "codeCollapsibleExpanded",
 	codeCollapsibleCollapsed = "codeCollapsibleCollapsed",
 
+	// AI 摘要
+	aiSummary = "aiSummary",
+	aiSummaryGenerating = "aiSummaryGenerating",
+	aiSummaryFailed = "aiSummaryFailed",
+	aiSummaryDisclaimer = "aiSummaryDisclaimer",
+
 	// 相册页面
 	gallery = "gallery",
 	galleryDescription = "galleryDescription",

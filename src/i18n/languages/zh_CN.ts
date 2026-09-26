@@ -365,6 +365,12 @@ export const zh_CN: Translation = {
 	[Key.codeCollapsibleExpanded]: "代码块已展开",
 	[Key.codeCollapsibleCollapsed]: "代码块已折叠",
 
+	// AI 摘要
+	[Key.aiSummary]: "AI 摘要",
+	[Key.aiSummaryGenerating]: "正在生成摘要…",
+	[Key.aiSummaryFailed]: "摘要生成失败，点击重试",
+	[Key.aiSummaryDisclaimer]: "内容由 AI 生成，仅供参考",
+
 	// 相册页面
 	[Key.gallery]: "相册",
 	[Key.galleryDescription]: "记录生活中的美好瞬间",
