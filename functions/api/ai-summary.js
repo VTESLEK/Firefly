@@ -46,7 +46,10 @@ export async function onRequestGet({ env, request }) {
 	if (!env.AI_SUMMARIES) return json({ error: "kv not configured" }, 503);
 	const cached = await env.AI_SUMMARIES.get(`sum:${slug}`, "json");
 	if (!cached || !cached.s) return json({ error: "not_generated" }, 404);
-	// 浏览器缓存一天，减少重复请求；文章更新后由 POST 重新生成覆盖
+	// 构建期内容指纹（fp）：与缓存哈希不一致说明文章已更新，返回 404 让前端走 POST 重新生成
+	const fp = searchParams.get("fp") || "";
+	if (fp && /^[0-9a-f]{16}$/.test(fp) && cached.h !== fp) return json({ error: "not_generated" }, 404);
+	// 浏览器缓存一天，减少重复请求；fp 变化即 URL 变化，天然绕过浏览器缓存
 	return json({ summary: cached.s, cached: true }, 200, { "cache-control": "public, max-age=86400" });
 }
 
@@ -69,7 +72,9 @@ export async function onRequestPost({ env, request }) {
 	const ip = request.headers.get("cf-connecting-ip") || "unknown";
 	if (rateLimited(ip)) return json({ error: "too many requests" }, 429);
 
-	const hash = (await sha256Hex(content)).slice(0, 16);
+	// 内容指纹：前端传构建期 fp 则直接采用，否则按正文计算（兼容无 fp 调用）
+	const fpIn = typeof body.fp === "string" ? body.fp : "";
+	const hash = /^[0-9a-f]{16}$/.test(fpIn) ? fpIn : (await sha256Hex(content)).slice(0, 16);
 	const key = `sum:${slug}`;
 
 	// 复用缓存：同一篇文章内容不变时绝不重复调用 AI

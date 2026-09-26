@@ -1,5 +1,6 @@
 ---
 import { render } from "astro:content";
+import { createHash } from "node:crypto";
 import * as path from "node:path";
 import Comment from "@components/comment/index.astro";
 import Markdown from "@components/common/Markdown.astro";
@@ -46,6 +47,12 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
+
+// AI 摘要内容指纹：正文哈希前 16 位，文章更新（指纹变化）后前端自动触发重新生成
+const aiFp = createHash("sha256")
+	.update(entry.body || "")
+	.digest("hex")
+	.slice(0, 16);
 
 const { remarkPluginFrontmatter } = await render(entry);
 
@@ -351,7 +358,7 @@ const relatedPosts = await getRelatedPosts(entry, 5);
       ) : (
         <>
           {/* AI 摘要（加密文章不显示） */}
-          <AISummary slug={entry.id} title={entry.data.title} />
+          <AISummary slug={entry.id} title={entry.data.title} fp={aiFp} />
 
           <Markdown class="mb-6 markdown-content onload-animation">
             <Content />

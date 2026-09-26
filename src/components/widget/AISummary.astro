@@ -5,8 +5,10 @@ import { i18n } from "@i18n/translation";
 interface Props {
 	slug: string;
 	title: string;
+	/** 构建期内容指纹（正文 sha256 前 16 位），用于文章更新后自动重新生成摘要 */
+	fp?: string;
 }
-const { slug, title } = Astro.props;
+const { slug, title, fp } = Astro.props;
 ---
 
 <div
@@ -14,6 +16,7 @@ const { slug, title } = Astro.props;
 	data-ai-summary
 	data-slug={slug}
 	data-title={title}
+	data-fp={fp || ""}
 	data-i18n-generating={i18n(I18nKey.aiSummaryGenerating)}
 	data-i18n-failed={i18n(I18nKey.aiSummaryFailed)}
 	data-pagefind-ignore
@@ -119,6 +122,7 @@ const { slug, title } = Astro.props;
 			el.dataset.aiState = "loading";
 			const slug = el.getAttribute("data-slug") || "";
 			const title = el.getAttribute("data-title") || "";
+			const fp = el.getAttribute("data-fp") || "";
 			const body = el.querySelector("[data-ai-body]");
 			const status = el.querySelector("[data-ai-status]");
 			const msgGenerating = el.getAttribute("data-i18n-generating") || "…";
@@ -139,7 +143,9 @@ const { slug, title } = Astro.props;
 					el.dataset.aiState = "loading";
 					let summary = "";
 					// 先查缓存；没有则触发服务端生成（服务端写 KV，之后所有访客复用）
-					const r1 = await fetch(`/api/ai-summary?slug=${encodeURIComponent(slug)}`);
+					const r1 = await fetch(
+						`/api/ai-summary?slug=${encodeURIComponent(slug)}${fp ? `&fp=${fp}` : ""}`,
+					);
 					if (r1.ok) {
 						summary = (await r1.json()).summary || "";
 					} else {
@@ -150,7 +156,7 @@ const { slug, title } = Astro.props;
 						const r2 = await fetch("/api/ai-summary", {
 							method: "POST",
 							headers: { "content-type": "application/json" },
-							body: JSON.stringify({ slug, title, content: article.slice(0, 12000) }),
+							body: JSON.stringify({ slug, title, fp, content: article.slice(0, 12000) }),
 						});
 						if (!r2.ok) throw new Error(`HTTP ${r2.status}`);
 						summary = (await r2.json()).summary || "";
@@ -191,7 +197,16 @@ const { slug, title } = Astro.props;
 				document.addEventListener("swup:enable", () => setup(), { once: true });
 			}
 		};
-		bindSwup();
-		setup();
+		// 等 DOM 解析完成再初始化：卡片在 .markdown-content 之前渲染，
+		// 立即执行会因正文尚未进入 DOM 而误判为空、移除卡片
+		const boot = () => {
+			bindSwup();
+			setup();
+		};
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", boot, { once: true });
+		} else {
+			boot();
+		}
 	})();
 </script>
