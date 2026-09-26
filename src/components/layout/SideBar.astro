@@ -8,6 +8,7 @@ import Music from "@/components/widget/Music.astro";
 import Profile from "@/components/widget/Profile.astro";
 import SidebarTOC from "@/components/widget/SidebarTOC.astro";
 import SiteStats from "@/components/widget/SiteStats.astro";
+import SiteInfo from "@/components/widget/SiteInfo.astro";
 import Tags from "@/components/widget/Tags.astro";
 import { sidebarLayoutConfig } from "@/config";
 import type {
@@ -44,6 +45,7 @@ const componentMap = {
   sidebarToc: SidebarTOC,
   advertisement: Advertisement,
   stats: SiteStats,
+  siteInfo: SiteInfo,
   calendar: Calendar,
   music: Music,
 } satisfies Record<WidgetComponentType, typeof Profile>;
