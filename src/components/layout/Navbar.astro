@@ -1,5 +1,6 @@
 ---
 import { Picture } from "astro:assets";
+import { readFileSync } from "node:fs";
 import * as path from "node:path";
 import type { ImageMetadata } from "astro";
 import { Icon } from "astro-icon/components";
@@ -89,6 +90,19 @@ const isLocalSrcLogo =
 	!logoValue.startsWith("http");
 let logoImg: ImageMetadata | null = null;
 
+// public 下的 .svg logo 内联渲染：stroke 用 currentColor，自动跟随站点亮暗主题
+const isInlineSvgLogo =
+	siteConfig.navbar.logo?.type === "image" &&
+	logoValue.startsWith("/") &&
+	logoValue.endsWith(".svg");
+let inlineSvgLogo = "";
+if (isInlineSvgLogo) {
+	inlineSvgLogo = readFileSync(
+		path.join(process.cwd(), "public", logoValue),
+		"utf-8",
+	).replace("<svg ", '<svg class="h-7 w-7 mb-1 mr-2" aria-hidden="true" ');
+}
+
 if (isLocalSrcLogo) {
 	const files = import.meta.glob<ImageMetadata>(
 		"../../**/*.{png,jpg,jpeg,webp,avif,gif,svg}",
@@ -116,6 +130,8 @@ if (isLocalSrcLogo) {
                 ]} style="font-family: var(--font-navbar-title, inherit)">
                                     {siteConfig.navbar.logo?.type === "icon" ? (
                                         <Icon is:inline name={siteConfig.navbar.logo.value || "material-symbols:home-pin-outline"} class="text-[1.75rem] mb-1 mr-2" />
+                                    ) : isInlineSvgLogo ? (
+                                        <Fragment set:html={inlineSvgLogo} />
                                     ) : siteConfig.navbar.logo?.type === "image" && logoImg ? (
                                         <Picture
                                             src={logoImg}

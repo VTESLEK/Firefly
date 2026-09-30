@@ -62,6 +62,16 @@ export const siteConfig: SiteConfig = {
 			// 可选，图标大小
 			// sizes: "32x32",
 		},
+		{
+			src: "/favicon/favicon-light-32.png",
+			theme: "light",
+			sizes: "32x32",
+		},
+		{
+			src: "/favicon/favicon-dark-32.png",
+			theme: "dark",
+			sizes: "32x32",
+		},
 	],
 
 	// 导航栏配置
@@ -74,8 +84,8 @@ export const siteConfig: SiteConfig = {
 		// 4. 网络图片: { type: "url", value: "https://example.com/logo.png", alt: "Logo" }
 		logo: {
 			type: "image",
-			value: "assets/images/firefly.png",
-			alt: "🍀",
+			value: "/logo-x.svg",
+			alt: "xane",
 		},
 		// 导航栏标题
 		title: "Firefly",
