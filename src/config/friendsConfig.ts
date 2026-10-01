@@ -76,6 +76,15 @@ export const friendsConfig: FriendLink[] = [
 		weight: 97,
 		enabled: true,
 	},
+	{
+		title: "Phantomxjc",
+		imgurl: "https://xjc.ccwu.cc/img/uploads/2026/06/image1.jpg",
+		desc: "记录个人生活和学习的一个网站。",
+		siteurl: "https://xjc.ccwu.cc",
+		tags: ["Astro"],
+		weight: 96,
+		enabled: true,
+	},
 
 ];
 
