@@ -40,3 +40,7 @@ package/
 
 # telegram bot poll offset
 .telegram-offset
+
+# local tooling state
+.wrangler/
+.build-env/

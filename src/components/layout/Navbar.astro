@@ -311,15 +311,12 @@ function loadButtonScript() {
 
 loadButtonScript();
 
-// 为semifull模式添加滚动检测逻辑
+// 为导航栏添加滚动检测逻辑（所有透明模式统一启用，驱动胶囊收缩动画）
 function initSemifullScrollDetection() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
 
-    const transparentMode = navbar.getAttribute('data-transparent-mode');
-    if (transparentMode !== 'semifull') return;
-
-    // 无论首页/非首页，semifull 都由滚动位置决定是否进入 scrolled 状态
+    // 无论首页/非首页，都由滚动位置决定是否进入 scrolled 状态
     // 先移除之前的滚动监听器，避免重复绑定
     if (window.semifullScrollHandler) {
         window.removeEventListener('scroll', window.semifullScrollHandler as () => void);

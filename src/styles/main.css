@@ -220,12 +220,16 @@ html {
     }
 
 
-    /* 开启边框和阴影效果时的样式 */
+    /* 开启边框和阴影效果时的样式（液态玻璃卡片：高光微边框 + 柔和环境阴影） */
     .enable-card-border .card-base {
-        @apply transition-all duration-300 border border-(--line-divider) shadow-xs;
+        @apply transition-all duration-300;
+        border: 1px solid var(--card-glass-border);
+        box-shadow: var(--card-glass-shadow);
     }
     .enable-card-border .card-base-transparent {
-        @apply transition-all duration-300 border border-(--line-divider) shadow-xs;
+        @apply transition-all duration-300;
+        border: 1px solid var(--card-glass-border);
+        box-shadow: var(--card-glass-shadow);
     }
     .enable-card-border .btn-card {
         @apply transition-all duration-300 border border-(--line-divider) shadow-xs;
@@ -584,6 +588,24 @@ html {
 
 /* 分页信息样式 */
 .pagination-info {
-  @apply text-sm text-(--text-secondary) text-center mb-2;
+    @apply text-sm text-(--text-secondary) text-center mb-2;
+}
+
+/* ============================================
+ * 文章卡片液态玻璃微交互
+ * hover 上浮 2~4px + 阴影轻微加深，0.3s 标准曲线
+ * 置于 @layer 之外，确保覆盖组件层/工具层的 transition 与 shadow
+ * ============================================ */
+.post-card-wrapper {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.post-card-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
+}
+
+:root.dark .post-card-wrapper:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
 }
 

@@ -664,13 +664,11 @@ function updateNavbarTransparency(mode: WALLPAPER_MODE) {
 	// 移除scrolled类
 	navbar.classList.remove("scrolled");
 
-	// 滚动检测功能
+	// 滚动检测功能（所有透明模式统一启用，驱动胶囊收缩动画）
 	if (
-		transparentMode === "semifull" &&
 		(mode === WALLPAPER_BANNER || mode === WALLPAPER_FULLSCREEN) &&
 		typeof window.initSemifullScrollDetection === "function"
 	) {
-		// 在Banner和全屏壁纸模式的semifull下启用滚动检测
 		window.initSemifullScrollDetection();
 	} else if (window.semifullScrollHandler) {
 		// 移除滚动监听器

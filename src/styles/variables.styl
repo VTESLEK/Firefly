@@ -7,8 +7,18 @@
 :root
   --primary: oklch(0.70 0.14 var(--hue))
   --page-bg: oklch(0.95 0.01 var(--hue))
-  --card-bg: white
+  --card-bg: rgba(255, 255, 255, 0.82)
   --card-bg-transparent: unquote("rgb(255 255 255 / var(--card-transparent-opacity, 0.6))")
+
+  /* 液态玻璃导航栏（月光银蓝底色） */
+  --navbar-glass-bg: linear-gradient(to bottom, rgba(238, 242, 250, 0.80), rgba(255, 255, 255, 0.60))
+  --navbar-glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.65)
+  --navbar-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08)
+  --navbar-glass-refraction: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent)
+
+  /* 卡片液态玻璃：高光微边框 + 柔和环境阴影 */
+  --card-glass-border: rgba(255, 255, 255, 0.60)
+  --card-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06)
   
   --btn-content: oklch(0.55 0.12 var(--hue))
   --btn-regular-bg: oklch(0.95 0.025 var(--hue))
@@ -91,8 +101,18 @@
 :root.dark
   --primary: oklch(0.75 0.14 var(--hue))
   --page-bg: oklch(0.16 0.014 var(--hue))
-  --card-bg: oklch(0.23 0.015 var(--hue))
+  --card-bg: rgba(23, 23, 23, 0.82)
   --card-bg-transparent: unquote("rgb(23 23 23 / var(--card-transparent-opacity, 0.6))")
+
+  /* 液态玻璃导航栏 - 暗色 */
+  --navbar-glass-bg: linear-gradient(to bottom, rgba(19, 21, 28, 0.66), rgba(19, 21, 28, 0.45))
+  --navbar-glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.14)
+  --navbar-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35)
+  --navbar-glass-refraction: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.20), transparent)
+
+  /* 卡片液态玻璃 - 暗色 */
+  --card-glass-border: rgba(255, 255, 255, 0.10)
+  --card-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35)
   
   --btn-content: oklch(0.75 0.1 var(--hue))
   --btn-regular-bg: oklch(0.33 0.035 var(--hue))
